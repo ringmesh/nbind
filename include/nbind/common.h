@@ -3,15 +3,17 @@
 
 #pragma once
 
+#include "export.h"
+
 namespace nbind {
 
-std::forward_list<BindClassBase *> &getClassList(void);
-std::forward_list<MethodDef> &getFunctionList(void);
-const void **getPrimitiveList(void);
-const void **getNamedTypeList(void);
+std::forward_list<BindClassBase *> & nbind_api getClassList(void);
+std::forward_list<MethodDef> & nbind_api getFunctionList(void);
+const void ** nbind_api getPrimitiveList(void);
+const void ** nbind_api getNamedTypeList(void);
 
-void registerClass(BindClassBase &bindClass);
-void registerFunction(
+void nbind_api registerClass(BindClassBase &bindClass);
+void nbind_api registerFunction(
 	const char *name,
 	funcPtr ptr,
 	unsigned int num,
