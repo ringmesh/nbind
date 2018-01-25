@@ -11,6 +11,8 @@
 using namespace v8;
 using namespace nbind;
 
+const char* nbind :: emptySetter = "";
+
 // Convert getter names like "getFoo" into property names like "foo".
 // This could be so much more concisely written with regexps...
 const char *stripGetterPrefix(const char *name, char *&nameBuf) {
