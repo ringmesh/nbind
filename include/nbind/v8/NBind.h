@@ -40,7 +40,7 @@ class cbWrapper;
 
 typedef cbWrapper<void> cbFunction;
 
-class NBind {
+class nbind_api NBind {
 
 public:
 

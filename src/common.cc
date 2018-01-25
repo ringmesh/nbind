@@ -3,10 +3,10 @@
 
 #include "nbind/nbind.h"
 
-namespace nbind {
+using namespace nbind;
 
 // const char *nbind :: emptyGetter = ""; unused for now.
-const char * emptySetter = "";
+const char* nbind_api nbind :: emptySetter = "";
 
 // Linkage for module-wide error message.
 char *Status :: message;
@@ -64,21 +64,21 @@ static const void **definePrimitiveTypes() {
 
 // Linkage for lists of all C++ class and function wrappers.
 
-std::forward_list<BindClassBase *> & getClassList() {
+std::forward_list<BindClassBase *> &nbind :: getClassList() {
 	// This stops working if moved outside the function.
 	static std::forward_list<BindClassBase *> classList;
 
 	return(classList);
 }
 
-std::forward_list<MethodDef> & getFunctionList() {
+std::forward_list<MethodDef> &nbind :: getFunctionList() {
 	// This stops working if moved outside the function.
 	static std::forward_list<MethodDef> functionList;
 
 	return(functionList);
 }
 
-const void ** getPrimitiveList() {
+const void **nbind :: getPrimitiveList() {
 	static const void **primitiveList = definePrimitiveTypes<
 		unsigned char,  signed char,    char,
 		unsigned short, signed short,
@@ -94,7 +94,7 @@ const void ** getPrimitiveList() {
 
 #define NBIND_TYPE(type) Typer<type>::makeID(), #type
 
-const void ** getNamedTypeList() {
+const void **nbind :: getNamedTypeList() {
 	static const void *typeList[] = {
 		NBIND_TYPE(void),
 		NBIND_TYPE(bool),
@@ -110,11 +110,11 @@ const void ** getNamedTypeList() {
 	return(typeList);
 }
 
-void registerClass(BindClassBase &spec) {
+void nbind :: registerClass(BindClassBase &spec) {
 	getClassList().emplace_front(&spec);
 }
 
-void registerFunction(
+void nbind :: registerFunction(
 	const char *name,
 	funcPtr ptr,
 	unsigned int num,
@@ -127,5 +127,3 @@ void registerFunction(
 #include "nbind/nbind.h"
 
 NBIND_CLASS(Int64) {}
-
-}

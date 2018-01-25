@@ -32,11 +32,13 @@
 #include <cstdint>
 #include <cstring>
 
+#include <nbind/export.h>
+
 namespace nbind {
 
 typedef void (*funcPtr)();
 
-class Status {
+class nbind_api Status {
 
 public:
 
