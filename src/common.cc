@@ -3,7 +3,7 @@
 
 #include "nbind/nbind.h"
 
-using namespace nbind;
+namespace nbind {
 
 // const char *nbind :: emptyGetter = ""; unused for now.
 const char *nbind :: emptySetter = "";
@@ -127,3 +127,5 @@ void nbind :: registerFunction(
 #include "nbind/nbind.h"
 
 NBIND_CLASS(Int64) {}
+
+}

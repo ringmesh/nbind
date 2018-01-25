@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "nbind/export.h"
+#include <nbind/export.h>
 
 namespace nbind {
 
