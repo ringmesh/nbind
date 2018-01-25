@@ -8,9 +8,9 @@
 namespace nbind {
 
 std::forward_list<BindClassBase *>& nbind_api getClassList(void);
-std::forward_list<MethodDef>& nbind_api getFunctionList(void);
-const void** nbind_api getPrimitiveList(void);
-const void** nbind_api getNamedTypeList(void);
+nbind_api std::forward_list<MethodDef>& getFunctionList(void);
+const nbind_api void** getPrimitiveList(void);
+nbind_api const void** getNamedTypeList(void);
 
 void nbind_api registerClass(BindClassBase &bindClass);
 void nbind_api registerFunction(
