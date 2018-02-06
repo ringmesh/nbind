@@ -97,6 +97,7 @@ function find(basePath, cb) {
 }
 exports.find = find;
 function init(basePath, lib, cb) {
+    if (basePath === undefined) basePath = __dirname;
     var callback = arguments[arguments.length - 1];
     if (typeof (callback) != 'function')
         callback = rethrow;
